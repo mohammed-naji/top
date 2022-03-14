@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('admin' , function() { return 'Admin Page'; });
@@ -10,7 +11,8 @@ use Illuminate\Support\Facades\Route;
 // Route::get('admin/registerations' , function() { return 'Admin Page'; });
 
 Route::prefix('adminpanel')->group(function() {
-    Route::get('/' , function() { return 'Admin Page'; });
+    // Route::get('/' , function() { return 'Admin Page'; });
+    Route::get('/', [AdminController::class, 'index']);
     Route::get('/dashboard' , function() { return 'Admin dashboard'; });
     Route::get('/users' , function() { return 'Admin users'; });
     Route::get('/statistics' , function() { return 'Admin statistics'; });

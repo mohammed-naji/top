@@ -8,6 +8,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        return 'Home Page';
+    }
+
+    public function user($user = '')
+    {
+        return 'User ' .$user;
     }
 }
+
+// Resource Controller
