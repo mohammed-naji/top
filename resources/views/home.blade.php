@@ -41,12 +41,12 @@
         </nav>
     </header>
 
-    <?php foreach(): ?>
+    {{-- <?php //foreach(): ?>
         <p></p>
-    <?php endforeach; ?>
+    <?php //endforeach; ?>
     @foreach()
 
-    @endforeach
+    @endforeach --}}
 
     <main>
         <div class="container mt-5">
