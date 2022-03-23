@@ -84,3 +84,9 @@ Route::post('form1', [FormsController::class, 'form1_submit'])->name('form1_subm
 
 Route::get('form2', [FormsController::class, 'form2'])->name('form2');
 Route::post('form2', [FormsController::class, 'form2_submit'])->name('form2_submit');
+
+Route::get('form3', [FormsController::class, 'form3'])->name('form3');
+Route::post('form3', [FormsController::class, 'form3_submit'])->name('form3_submit');
+
+Route::get('form4', [FormsController::class, 'form4'])->name('form4');
+Route::post('form4', [FormsController::class, 'form4_submit'])->name('form4_submit');
