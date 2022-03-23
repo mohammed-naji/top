@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\Site1Controller;
@@ -76,3 +77,10 @@ Route::prefix('site2')->name('site2.')->controller(Site2Controller::class)->grou
     Route::get('/contact', 'contact')->name('contact');
     Route::post('/contact', 'contact_submit')->name('contact_submit');
 });
+
+
+Route::get('form1', [FormsController::class, 'form1'])->name('form1');
+Route::post('form1', [FormsController::class, 'form1_submit'])->name('form1_submit');
+
+Route::get('form2', [FormsController::class, 'form2'])->name('form2');
+Route::post('form2', [FormsController::class, 'form2_submit'])->name('form2_submit');
