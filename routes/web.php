@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\Site1Controller;
 use App\Http\Controllers\Site2Controller;
-
+use App\Http\Controllers\TeacherController;
 
 // Route::get('url', 'action');
 // Route::post('url', 'action');
@@ -90,3 +90,19 @@ Route::post('form3', [FormsController::class, 'form3_submit'])->name('form3_subm
 
 Route::get('form4', [FormsController::class, 'form4'])->name('form4');
 Route::post('form4', [FormsController::class, 'form4_submit'])->name('form4_submit');
+
+
+// CRUD
+// Route::get('teachers', [TeacherController::class, 'index'])->name('teachers.index');
+// Route::get('teachers/{id}', [TeacherController::class, 'show'])->name('teachers.show');
+
+// Route::get('teachers/create', [TeacherController::class, 'create'])->name('teachers.create');
+// Route::post('teachers/create', [TeacherController::class, 'store'])->name('teachers.store');
+
+// Route::get('teachers/{id}/edit', [TeacherController::class, 'edit'])->name('teachers.edit');
+// Route::put('teachers/{id}/edit', [TeacherController::class, 'update'])->name('teachers.update');
+
+// Route::delete('teachers/{id}', [TeacherController::class, 'destroy'])->name('teachers.destroy');
+
+
+Route::resource('teachers', TeacherController::class);
