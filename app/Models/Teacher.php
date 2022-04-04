@@ -11,4 +11,6 @@ class Teacher extends Model
 
     // protected $fillable = ['name', 'email', 'phone'];
     protected $guarded = [];
+
+    // protected $table = 'my_teachers';
 }

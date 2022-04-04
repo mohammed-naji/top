@@ -15,6 +15,12 @@
             <a href="{{ route('teachers.create') }}" class="btn btn-success">Add New Teacher</a>
         </div>
 
+        <form action="{{ route('teachers.index') }}" method="get">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search..." value="{{ request()->keyword }}" name="keyword">
+                <button class="btn btn-success" type="submit" id="button-addon2">Search</button>
+              </div>
+        </form>
         @if ( session('msg') )
         <div class="alert alert-{{ session('type') }}">
             {{ session('msg') }}
@@ -42,10 +48,16 @@
                 {{-- <td>{{ $teacher->created_at->format('d M, Y') }}</td> --}}
                 <td>{{ $teacher->created_at->format('d-m-Y') }}</td>
                 <td>{{ $teacher->updated_at->diffForHumans() }}</td>
-
                 <td>
-                    <a href="#" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                    <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                    <a href="{{ route('teachers.edit', $teacher->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                    {{-- <a href="{{ route('teachers.destroy', $teacher->id) }}" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a> --}}
+                    <form class="d-inline" action="{{ route('teachers.destroy', $teacher->id) }}" method="POST">
+                        @csrf
+                        {{-- <input name="_method" value="delete" type="hidden" /> --}}
+                        @method('delete')
+                        {{-- {{ method_field('delete') }} --}}
+                        <button onclick="return confirm('هل انت متاكد اخوي ؟! شاور حالك')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+                    </form>
                 </td>
             </tr>
             @endforeach
@@ -62,6 +74,10 @@
         setTimeout(() => {
             $('.alert').slideUp(700);
         }, 2000);
+
+        // setInterval(() => {
+
+        // }, 1000);
 
 
     </script>
@@ -81,7 +97,7 @@
 
         @if ( session('msg') )
         Toast.fire({
-            icon: 'success',
+            icon: '{{ session("icon") }}',
             title: '{{ session("msg") }}'
         })
         @endif
