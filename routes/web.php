@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FormsController;
+use App\Http\Controllers\RelationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\Site1Controller;
@@ -104,5 +105,7 @@ Route::post('form4', [FormsController::class, 'form4_submit'])->name('form4_subm
 
 // Route::delete('teachers/{id}', [TeacherController::class, 'destroy'])->name('teachers.destroy');
 
-
 Route::resource('teachers', TeacherController::class);
+
+
+Route::get('one-to-one', [RelationController::class, 'one_to_one']);
