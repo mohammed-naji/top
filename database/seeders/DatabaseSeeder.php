@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Comment;
 use App\Models\Teacher;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -16,7 +17,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        Teacher::truncate();
-        Teacher::factory(1000)->create();
+        // Teacher::truncate();
+        // Teacher::factory(1000)->create();
+
+        Comment::factory(100)->create();
     }
 }

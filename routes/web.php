@@ -109,3 +109,11 @@ Route::resource('teachers', TeacherController::class);
 
 
 Route::get('one-to-one', [RelationController::class, 'one_to_one']);
+
+
+
+Route::get('one-to-many', [RelationController::class, 'one_to_many']);
+
+
+Route::get('posts', [RelationController::class, 'posts'])->name('posts.all');
+Route::get('posts/{id}', [RelationController::class, 'post_single'])->name('posts.single');
