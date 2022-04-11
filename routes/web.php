@@ -117,3 +117,6 @@ Route::get('one-to-many', [RelationController::class, 'one_to_many']);
 
 Route::get('posts', [RelationController::class, 'posts'])->name('posts.all');
 Route::get('posts/{id}', [RelationController::class, 'post_single'])->name('posts.single');
+
+Route::get('register-subject', [RelationController::class, 'register_subject'])->name('register_subject');
+Route::post('register-subject', [RelationController::class, 'register_subject_submit'])->name('register_subject_submit');

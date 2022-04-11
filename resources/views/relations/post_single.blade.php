@@ -57,11 +57,11 @@
 <body>
 
     @if ($next_post)
-    <a style="background: url({{ asset('uploads/'.$next_post->image) }});background-size: cover" href="{{ route('posts.single', $id+1) }}" class="navigation next">Next</a>
+    <a style="background: url({{ asset('uploads/'.$next_post->image) }});background-size: cover" href="{{ route('posts.single', $next_post->id) }}" class="navigation next">Next</a>
     @endif
 
     @if ($prev_post)
-    <a style="background: url({{ asset('uploads/'.$prev_post->image) }});background-size: cover" href="{{ route('posts.single', $id-1) }}" class="navigation prev">Previous</a>
+    <a style="background: url({{ asset('uploads/'.$prev_post->image) }});background-size: cover" href="{{ route('posts.single', $prev_post->id) }}" class="navigation prev">Previous</a>
     @endif
     <div class="container my-5">
         <div class="row justify-content-center">
